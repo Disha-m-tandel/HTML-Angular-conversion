@@ -88,15 +88,23 @@ export const mockApiInterceptor: HttpInterceptorFn = (req, next) => {//HttpInter
 
 
   // Get one user by ID
-  if (req.url.startsWith('api/users/')) {
+  if (req.url.startsWith('api/users/')) {//req : means the request coming from the frontend.
+    //"api/users/3".startsWith("api/users/") = false
+    //So this if block handles requests for a specific user.
+    const id = Number(req.url.split('/').pop());//req.url = "api/users/3" so req.url.split('/') It breaks the string wherever / appears. So: "api/users/3"
+    //becomes: ["api", "users", "3"] so .pop() : .pop() gets the last item. we get:"3" Important: "3" is still a string. So Number() will convert the string to number
+    //therefore id = 3
 
-    const id = Number(req.url.split('/').pop());
-
-    const user = users.find(user => user.id === id);
+    const user = users.find(user => user.id === id);//Find the user whose id is 3.
+    //.find() searches an array and returns the first item that matches a condition.
+    // find() checks each user in the users array and finds the user with the matching id(basically it will check from user )
+    //Nadia → id 3 → 3 === 3 ✅
 
     return of(
-      new HttpResponse({
-        status: user ? 200 : 404,
+      new HttpResponse({//Create an HTTP response and send it back(We're creating an Angular HTTP response)
+        status: user ? 200 : 404, //If user exists → 200 //Otherwise → 404
+        //how this works means the user variable storing the data so it is basically true 
+
         body: user
       })
     );
