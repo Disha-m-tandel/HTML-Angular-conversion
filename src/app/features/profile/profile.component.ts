@@ -1,11 +1,11 @@
 
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-profile',
-    imports: [ReactiveFormsModule, CommonModule],
+    imports: [ReactiveFormsModule],
     templateUrl: './profile.component.html',
     styleUrl: './profile.component.scss'
 })

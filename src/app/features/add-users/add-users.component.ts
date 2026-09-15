@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-add-users',
-    imports: [RouterLink, ReactiveFormsModule, CommonModule],
+    imports: [RouterLink, ReactiveFormsModule],
     templateUrl: './add-users.component.html',
     styleUrl: './add-users.component.scss'
 })

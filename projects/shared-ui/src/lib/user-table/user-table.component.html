@@ -12,54 +12,48 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let user of users" appRowHighlight>
-        <!--The users here comes from: @Input() users: any[] = []; -->
-
-        <td>
-          <div class="d-flex align-items-center gap-2">
-            <img
-              class="avatar-img avatar-sm"
-              [src]="user.profile"
-              [alt]="user.name"
-            />
-
-            <div>
-              <p class="fw-semibold mb-0">
-                {{ user.name | capitalizeName }}
-              </p>
-
-              <p class="text-muted small mb-0">
-                {{ user.email }}
-              </p>
-            </div>
-          </div>
-        </td>
-
-        <td>{{ user.role }}</td>
-
-        <td>{{ user.team }}</td>
-
-        <td>
-          <span
-            class="badge"
+      @for (user of users; track user) {
+        <tr appRowHighlight>
+          <!--The users here comes from: @Input() users: any[] = []; -->
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <img
+                class="avatar-img avatar-sm"
+                [src]="user.profile"
+                [alt]="user.name"
+                />
+                <div>
+                  <p class="fw-semibold mb-0">
+                    {{ user.name | capitalizeName }}
+                  </p>
+                  <p class="text-muted small mb-0">
+                    {{ user.email }}
+                  </p>
+                </div>
+              </div>
+            </td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.team }}</td>
+            <td>
+              <span
+                class="badge"
             [ngClass]="{
               'text-bg-success': user.status === 'active',
               'text-bg-secondary': user.status === 'suspended',
               'text-bg-warning': user.status === 'pending',
             }"
-          >
-            {{ user.status }}</span
-          >
-        </td>
-
-        <td>{{ user.joined }}</td>
-
-        <td class="text-end">
-          <a class="btn btn-light btn-sm" [routerLink]="['/users', user.id]" appTooltip="View details">
-            View
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+                >
+                {{ user.status }}</span
+                >
+              </td>
+              <td>{{ user.joined }}</td>
+              <td class="text-end">
+                <a class="btn btn-light btn-sm" [routerLink]="['/users', user.id]" appTooltip="View details">
+                  View
+                </a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
