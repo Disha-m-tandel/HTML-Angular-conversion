@@ -1,0 +1,95 @@
+.avatar-sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  transition: border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-1px);
+}
+.btn-light {
+  border-color: var(--admin-border);
+  background: var(--admin-surface-soft);
+  color: var(--admin-text);
+}
+
+
+.table {
+  --bs-table-bg: transparent;
+}
+
+.table thead th {
+  color: var(--admin-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  min-width: 120px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.table tbody tr {
+  transition: background 0.16s ease;
+}
+
+.table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.badge {
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+}
+
+.text-muted {
+  color: var(--admin-muted) !important;
+}
+
+
+.table {
+  --bs-table-color: var(--admin-text);
+  --bs-table-border-color: var(--admin-border);
+  color: var(--admin-text);
+}
+
+@media (max-width: 575.98px) {
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+  background-color: #474545;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+}

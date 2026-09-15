@@ -1,0 +1,29 @@
+.dashboard-content > .container-fluid {
+  padding-top: 1.75rem !important;
+  padding-bottom: 1.75rem !important;
+}
+
+@media (max-width: 991.98px) {
+.admin-footer .container-fluid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575.98px){ 
+ .admin-footer  .container-fluid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .dashboard-content > .container-fluid {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  .admin-sidebar {
+    box-shadow: 18px 0 48px rgba(0, 0, 0, 0.28);
+  }
+}
