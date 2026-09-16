@@ -5,5 +5,11 @@
     [type]="barChartType"
     [options]="barChartOptions">
 </canvas>
-<!-- This passes your chart data from TypeScript to the chart. -->
+<!-- canvas is an HTML element that provides a drawing area in the browser. By itself, it is basically an empty drawing surface. JavaScript can draw things on it: Chart.js uses that drawing area to draw: So you don't manually create every bar with HTML. -->
+<!-- baseChart is an Angular directive provided by ng2-charts. It tells Angular: "Treat this canvas as a Chart.js chart." -->
+<!--data passes your chart data from TypeScript to the chart. -->
+<!--type This tells Chart.js what type of chart you want. For example: barChartType = 'bar'; means: Draw a bar chart. -->
+<!--options This passes configuration/settings for your chart. You can configure things like: responsiveness, legend, axes, title, tooltips, scales, etc -->
+<!-- So why canvas? Because Chart.js needs a drawing surface, and <canvas> provides that surface. -->
+
 </div>
