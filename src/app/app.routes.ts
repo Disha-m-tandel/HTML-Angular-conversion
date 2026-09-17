@@ -23,21 +23,21 @@ export const routes: Routes = [
       {
         path: 'users',
         loadComponent: () =>
-          import('../app/features/users/users.component').then(
+          import('./features/users/users.component').then(
             (m) => m.UsersComponent,
           ),
       },
       {
         path: 'users/:id',
         loadComponent: () =>
-          import('../app/features/users/user-details/user-details.component').then(
+          import('./features/users/user-details/user-details.component').then(
             (m) => m.UserDetailsComponent,
           ),
       },
       {
         path: 'addUsers',
         loadComponent: () =>
-          import('./features/add-users/add-users.component').then(
+          import('./features/users/add-users/add-users.component').then(
             (m) => m.AddUsersComponent,
           ),
       },

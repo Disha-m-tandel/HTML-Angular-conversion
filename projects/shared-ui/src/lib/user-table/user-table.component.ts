@@ -1,15 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule } from "@angular/router";
-import { CapitalizeNamePipe } from '../../../../../src/app/partials/pipes/capitalize-name.pipe';
-import { RowHighlightDirective } from '../../../../../src/app/partials/directives/row-highlight/row-highlight.directive';
-import { TooltipDirective } from '../../../../../src/app/partials/directives/tool-tip/tool-tip.directive';
+import { RouterModule } from "@angular/router";
+import { CapitalizeNamePipe } from '../../../../../src/app/shared/pipes/capitalize-name.pipe';
+import { RowHighlightDirective } from '../../../../../src/app/shared/directives/row-highlight/row-highlight.directive';
+import { TooltipDirective } from '../../../../../src/app/shared/directives/tool-tip/tool-tip.directive';
+
 
 
 @Component({
   selector: 'app-user-table',
   standalone: true,
-  imports: [CommonModule, RouterModule, CapitalizeNamePipe, RowHighlightDirective, TooltipDirective],
+  imports: [CommonModule, RouterModule, CapitalizeNamePipe, RowHighlightDirective, TooltipDirective, CapitalizeNamePipe],
   templateUrl: './user-table.component.html',
   styleUrl: './user-table.component.scss'
 })
@@ -27,5 +28,8 @@ export class UserTableComponent {
 //users : any[] : users is an array, and its items can be any type(number or boolean or string).
 //= [] : This gives users its initial/default value. [] means an empty array. So when the component first starts: users: any[] = []; empty array then Later, when the parent sends the actual data through @Input(): []
                                                                                                                                                                                                             // ↓                    
-                                                                                                                                                                                              //[Sarah, Rafi, Nadia, Mina, Jon]
+   @Input() columns: {
+  key: string;
+  label: string;
+}[] = [];                                                                                                                                                                                           //[Sarah, Rafi, Nadia, Mina, Jon]
 }

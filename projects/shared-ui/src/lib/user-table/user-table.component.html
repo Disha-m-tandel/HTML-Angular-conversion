@@ -2,12 +2,9 @@
   <table class="table align-middle mb-0" id="usersTable" data-searchable-table*>
     <thead>
       <tr>
-        <th scope="col">User</th>
-        <th scope="col">Role</th>
-        <th scope="col">Team</th>
-        <th scope="col">Status</th>
-        <th scope="col">Joined</th>
-        <th scope="col" class="text-end">Action</th>
+        @for(column of columns; track column.key){
+        <th scope="col" [class.text-end]="column.key === 'action'">{{ column.label }}</th>
+        }
       </tr>
     </thead>
 

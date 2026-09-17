@@ -180,7 +180,7 @@
 
     <!-- "Don't load this component immediately. Load it later." -->
     @defer (on viewport) {
-      <app-user-table [users]="users"></app-user-table>
+      <app-user-table [users]="users" [columns]="columns"></app-user-table>
     } 
     <!-- When that placeholder enters the viewport, Angular says: "Okay! The user has reached this part of the page. Let's load the deferred user table." -->
     @placeholder {

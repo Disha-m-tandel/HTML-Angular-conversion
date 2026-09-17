@@ -15,6 +15,14 @@ import { UserTableComponent } from '../../../../projects/shared-ui/src/lib/user-
 export class UsersComponent {
   users: User[] = [];
   
+  columns = [
+  { key: 'name', label: 'User' },
+  { key: 'role', label: 'Role' },
+  { key: 'team', label: 'Team' },
+  { key: 'status', label: 'Status' },
+  { key: 'joined', label: 'Joined' },
+  { key: 'action', label: 'Action' }
+];
     constructor(private userService: UserDetailsService) {}
   
     ngOnInit(): void {
